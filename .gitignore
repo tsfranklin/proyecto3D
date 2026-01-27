@@ -1,0 +1,29 @@
+# Ignorar archivos y carpetas de Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Tt]estResults/
+
+# Archivos de configuración de proyectos de Unity
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+
+# Archivos específicos de plataforma y otros temporales
+*.swp
+*.suo
+*.bak
+*.tmp
