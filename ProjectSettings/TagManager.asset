@@ -5,6 +5,17 @@ TagManager:
   serializedVersion: 3
   tags:
   - Objetivo
+  - Cubo
+  - Esfera
+  - Cilindro
+  - Capsula
+  - Grafica
+  - Ram
+  - FuenteAlimentacion
+  - PlacaBase
+  - Ventilador
+  - RefrigeracionLiquida
+  - Ordenador
   layers:
   - Default
   - TransparentFX

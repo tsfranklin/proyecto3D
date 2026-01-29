@@ -1,59 +1,118 @@
 using UnityEngine;
-using UnityEngine.UI; // Necesario para controlar la UI
+using UnityEngine.UI;
 
 public class MiradaInteraccion : MonoBehaviour
 {
-    public float distanciaRayo = 10f;     // Cuán lejos ve el jugador
-    public float tiempoParaActivar = 2.0f; // Tiempo necesario mirando
-    public GameObject panelMensaje;       // El Panel que creamos
+    public float distanciaRayo = 10f;
+    public float tiempoParaActivar = 2.0f;
+
+    // Solo los 4 paneles básicos
+    public GameObject panelMensajeGrafica;
+    public GameObject panelMensajePlacaBase;
+    public GameObject panelMensajeFuenteAlimentacion;
+    public GameObject panelMensajeVentilador;
+    public GameObject panelMensajeRefrigeracionLiquida;
+    public GameObject panelMensajeOrdenador;
+    public GameObject panelMensajeRam;
+
 
     private float cronometro = 0f;
-    private bool mirandoObjeto = false;
+    private string objetoActual = ""; 
 
     void Update()
     {
-        // Lanzamos un rayo desde el centro de la cámara hacia adelante
+        // Lanzamos el rayo
         Ray rayo = new Ray(transform.position, transform.forward);
         RaycastHit golpe;
 
-        // Dibujamos el rayo en la escena (solo visible en el editor para pruebas)
+        // Dibujo para debug (solo se ve en Scene)
         Debug.DrawRay(transform.position, transform.forward * distanciaRayo, Color.red);
 
-        // Si el rayo choca con algo
         if (Physics.Raycast(rayo, out golpe, distanciaRayo))
         {
-            // Verificamos si tiene la etiqueta "Objetivo"
-            if (golpe.collider.CompareTag("Objetivo"))
+            if (golpe.collider.CompareTag("Grafica"))
             {
-                mirandoObjeto = true;
-                cronometro += Time.deltaTime; // Sumamos tiempo
-
-                // Si superamos los 2 segundos
-                if (cronometro >= tiempoParaActivar)
-                {
-                    MostrarMensaje();
-                }
+                ProcesarMirada("Grafica");
+            }
+            else if (golpe.collider.CompareTag("PlacaBase"))
+            {
+                ProcesarMirada("PlacaBase");
+            }
+            else if (golpe.collider.CompareTag("FuenteAlimentacion"))
+            {
+                ProcesarMirada("FuenteAlimentacion");
+            }
+            else if (golpe.collider.CompareTag("Ventilador"))
+            {
+                ProcesarMirada("Ventilador");
+            }
+            else if (golpe.collider.CompareTag("RefrigeracionLiquida"))
+            {
+                ProcesarMirada("RefrigeracionLiquida");
+            }
+            else if (golpe.collider.CompareTag("Ordenador"))
+            {
+                ProcesarMirada("Ordenador");
+            }
+            else if (golpe.collider.CompareTag("Ram"))
+            {
+                ProcesarMirada("Ram");
             }
             else
             {
-                ResetearMirada(); // Miramos algo, pero no es el objetivo
+                ResetearMirada();
             }
+            
         }
         else
         {
-            ResetearMirada(); // No miramos nada
+            ResetearMirada();
+        }
+    }
+
+    void ProcesarMirada(string tagObjeto)
+    {
+        if (objetoActual != tagObjeto)
+        {
+            cronometro = 0f;
+            objetoActual = tagObjeto;
+            OcultarTodosLosPaneles(); 
+        }
+
+        cronometro += Time.deltaTime;
+
+        if (cronometro >= tiempoParaActivar)
+        {
+            MostrarMensaje(tagObjeto);
         }
     }
 
     void ResetearMirada()
     {
-        mirandoObjeto = false;
         cronometro = 0f;
-        panelMensaje.SetActive(false); // Ocultamos el panel si dejamos de mirar
+        objetoActual = "";
+        OcultarTodosLosPaneles();
     }
 
-    void MostrarMensaje()
+    void OcultarTodosLosPaneles()
     {
-        panelMensaje.SetActive(true); // Mostramos el panel
+        if(panelMensajeGrafica) panelMensajeGrafica.SetActive(false);
+        if(panelMensajePlacaBase) panelMensajePlacaBase.SetActive(false);
+        if(panelMensajeFuenteAlimentacion) panelMensajeFuenteAlimentacion.SetActive(false);
+        if(panelMensajeVentilador) panelMensajeVentilador.SetActive(false);
+        if(panelMensajeRefrigeracionLiquida) panelMensajeRefrigeracionLiquida.SetActive(false);
+        if(panelMensajeOrdenador) panelMensajeOrdenador.SetActive(false);
+        if(panelMensajeRam) panelMensajeRam.SetActive(false);
+    }
+
+    void MostrarMensaje(string tag)
+    {
+        if (tag == "Grafica") panelMensajeGrafica.SetActive(true);
+        if (tag == "PlacaBase") panelMensajePlacaBase.SetActive(true);
+        if (tag == "FuenteAlimentacion") panelMensajeFuenteAlimentacion.SetActive(true);
+        if (tag == "Ventilador") panelMensajeVentilador.SetActive(true);
+        if (tag == "RefrigeracionLiquida") panelMensajeRefrigeracionLiquida.SetActive(true);
+        if (tag == "Ordenador") panelMensajeOrdenador.SetActive(true);
+        if (tag == "Ram") panelMensajeRam.SetActive(true);
     }
 }

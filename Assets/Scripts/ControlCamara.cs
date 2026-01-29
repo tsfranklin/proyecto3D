@@ -12,7 +12,7 @@ public class ControlCamara : MonoBehaviour
 
     void Start()
     {
-        // Crear el padre para rotarlo y corregir la dirección
+        // Crear el padre para ro tarlo y corregir la dirección
         camParent = new GameObject("PadreCamara");
         camParent.transform.position = this.transform.position;
         this.transform.parent = camParent.transform;

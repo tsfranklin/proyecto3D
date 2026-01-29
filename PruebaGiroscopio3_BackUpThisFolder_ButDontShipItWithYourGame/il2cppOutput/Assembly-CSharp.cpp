@@ -21,6 +21,7 @@ struct IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA;
 struct MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354;
 struct MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71;
 struct NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A;
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C;
 struct Readme_tE17B99201D0F52BD5727638AD3F41072A65B3BBB;
 struct SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6;
 struct ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A;
@@ -38,6 +39,7 @@ IL2CPP_EXTERN_C RuntimeClass* Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il
 IL2CPP_EXTERN_C RuntimeClass* GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Physics_t1244C2983AEAFA149425AFFC3DF53BC91C18ED56_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CCalibrarInicioU3Ed__4_tFAEB4FE83F1905A7562A2861AA9E18CEBD7367E4_il2cpp_TypeInfo_var;
@@ -45,7 +47,14 @@ IL2CPP_EXTERN_C RuntimeClass* Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_
 IL2CPP_EXTERN_C RuntimeClass* WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____A359BB19B289AAFBA4E0712B1F67F2316F0DD115EE50BB1C9E466570973D8519_FieldInfo_var;
 IL2CPP_EXTERN_C RuntimeField* U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA____C3BFC3D9E88F041887A1EFF37C8DE4505B03F4001D4A420E3748426EB675914B_FieldInfo_var;
-IL2CPP_EXTERN_C String_t* _stringLiteralD068D01543BD6439ECEBA2F8356F454597A9E24F;
+IL2CPP_EXTERN_C String_t* _stringLiteral1D742238A258B52E2058000B26880F7D8F12EB22;
+IL2CPP_EXTERN_C String_t* _stringLiteral1E0DDC509B8F84D8AE8B7A73C688BBABDC6D03E0;
+IL2CPP_EXTERN_C String_t* _stringLiteral21EB306CA2618926750F05B97B9BBDA299B7FF68;
+IL2CPP_EXTERN_C String_t* _stringLiteral2912713DE9C825979B7AF02EDC37A73FB83E7E0B;
+IL2CPP_EXTERN_C String_t* _stringLiteral542F5976F8CAC84D51B8354363C1F822129311B6;
+IL2CPP_EXTERN_C String_t* _stringLiteralC6EF643EA0FAE7DF95BAFBABD8A5C877F40C9F56;
+IL2CPP_EXTERN_C String_t* _stringLiteralD6F8353D40BB3043A5281C5BEC468EF0D97F09A0;
+IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
 IL2CPP_EXTERN_C String_t* _stringLiteralF26F103F430F66F757609AAF5ECD9B5DCA97AA7E;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CCalibrarInicioU3Ed__4_System_Collections_IEnumerator_Reset_m5DBDC16A21713ED6D0429B1BC2E4F2CBF9DA1192_RuntimeMethod_var;
 struct Exception_t_marshaled_com;
@@ -385,9 +394,15 @@ struct MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354  : public Mon
 {
 	float ___distanciaRayo;
 	float ___tiempoParaActivar;
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___panelMensaje;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___panelMensajeGrafica;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___panelMensajePlacaBase;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___panelMensajeFuenteAlimentacion;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___panelMensajeVentilador;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___panelMensajeRefrigeracionLiquida;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___panelMensajeOrdenador;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___panelMensajeRam;
 	float ___cronometro;
-	bool ___mirandoObjeto;
+	String_t* ___objetoActual;
 };
 struct U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA_StaticFields
 {
@@ -419,6 +434,10 @@ struct Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_StaticFields
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___backVector;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___positiveInfinityVector;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___negativeInfinityVector;
+};
+struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_StaticFields
+{
+	int32_t ___OffsetOfInstanceIDInCPlusPlusObject;
 };
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -493,9 +512,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_DrawRay_mB172868181856F153732BB56C
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Physics_Raycast_m839BA104A76B928A03F075C622923C6FCD2F8685 (Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 ___0_ray, RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5* ___1_hitInfo, float ___2_maxDistance, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* RaycastHit_get_collider_m84B160439BBEAB6D9E94B799F720E25C9E2D444D (RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5 (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, String_t* ___0_tag, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_MostrarMensaje_m86C7C81A2C2B053E40FCE0F533C3D71562753811 (MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_ProcesarMirada_m023398C72035A7F7B4F6F268EC705F8E7C52F1FC (MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354* __this, String_t* ___0_tagObjeto, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_ResetearMirada_mF6B3EE3A965A2626FED7CA5883DC6F11A87612B9 (MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6 (String_t* ___0_a, String_t* ___1_b, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_OcultarTodosLosPaneles_m2F52E246AC170C35555D59071A7920FBB21954CD (MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_MostrarMensaje_m6E8E9848C1CD3069139FE30AD4F2685752120917 (MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354* __this, String_t* ___0_tag, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Implicit_m93896EF7D68FA113C42D3FE2BC6F661FC7EF514A (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_exists, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, bool ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1 (String_t* ___0_a, String_t* ___1_b, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScriptableObject__ctor_mD037FDB0B487295EA47F79A4DB1BF1846C9087FF (ScriptableObject_tB3BFDB921A1B1795B38A5417D3B97A89A140436A* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeHelpers_InitializeArray_m751372AA3F24FBF6DA9B9D687CBFA2DE436CAB9B (RuntimeArray* ___0_array, RuntimeFieldHandle_t6E4C45B6D2EA12FC99185805A7E77527899B25C5 ___1_fldHandle, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* __this, float ___0_x, float ___1_y, float ___2_z, const RuntimeMethod* method) ;
@@ -519,7 +543,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 65400
+// Method Definition Index: 65379
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ControlCamara_Start_m65CBD9944755AAE9B60DB3DF95FD653D79B8ECDA (ControlCamara_t26E2A87C8639934C099E9FEF56D25E179C16B87B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -570,7 +594,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ControlCamara_Start_m65CBD9944755AAE9B60
 		return;
 	}
 }
-// Method Definition Index: 65401
+// Method Definition Index: 65380
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ControlCamara_CalibrarInicio_m3289EA617524CA1C9E513B24310A3FCC99DB07AE (ControlCamara_t26E2A87C8639934C099E9FEF56D25E179C16B87B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -589,7 +613,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ControlCamara_CalibrarInicio_m
 		return L_1;
 	}
 }
-// Method Definition Index: 65402
+// Method Definition Index: 65381
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ControlCamara_Update_m7BAEAEA61851C20361AB5EB6E600252340439E7A (ControlCamara_t26E2A87C8639934C099E9FEF56D25E179C16B87B* __this, const RuntimeMethod* method) 
 {
 	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 V_0;
@@ -655,7 +679,7 @@ IL_007a:
 		return;
 	}
 }
-// Method Definition Index: 65403
+// Method Definition Index: 65382
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ControlCamara__ctor_m54C6AA67D39E397E32B77251C69DC140E316895B (ControlCamara_t26E2A87C8639934C099E9FEF56D25E179C16B87B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -673,7 +697,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ControlCamara__ctor_m54C6AA67D39E397E32B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 65404
+// Method Definition Index: 65383
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCalibrarInicioU3Ed__4__ctor_m87CB3DFBF5D613B90846A0B1E8CE1438A85906B5 (U3CCalibrarInicioU3Ed__4_tFAEB4FE83F1905A7562A2861AA9E18CEBD7367E4* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -683,14 +707,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCalibrarInicioU3Ed__4__ctor_m87CB3DFB
 		return;
 	}
 }
-// Method Definition Index: 65405
+// Method Definition Index: 65384
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCalibrarInicioU3Ed__4_System_IDisposable_Dispose_m15A848D865619C528C8DA29B936B87ED3C6BB3D5 (U3CCalibrarInicioU3Ed__4_tFAEB4FE83F1905A7562A2861AA9E18CEBD7367E4* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 65406
+// Method Definition Index: 65385
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CCalibrarInicioU3Ed__4_MoveNext_mBE68D3CF849DF663464C370D99E41C2517DBB71B (U3CCalibrarInicioU3Ed__4_tFAEB4FE83F1905A7562A2861AA9E18CEBD7367E4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -776,7 +800,7 @@ IL_0037:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 65407
+// Method Definition Index: 65386
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCalibrarInicioU3Ed__4_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA292C0AE765E4C096DA2C50493399BC241FD7D8E (U3CCalibrarInicioU3Ed__4_tFAEB4FE83F1905A7562A2861AA9E18CEBD7367E4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -784,7 +808,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCalibrarInicioU3Ed__4_Syste
 		return L_0;
 	}
 }
-// Method Definition Index: 65408
+// Method Definition Index: 65387
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCalibrarInicioU3Ed__4_System_Collections_IEnumerator_Reset_m5DBDC16A21713ED6D0429B1BC2E4F2CBF9DA1192 (U3CCalibrarInicioU3Ed__4_tFAEB4FE83F1905A7562A2861AA9E18CEBD7367E4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -793,7 +817,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCalibrarInicioU3Ed__4_System_Collecti
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CCalibrarInicioU3Ed__4_System_Collections_IEnumerator_Reset_m5DBDC16A21713ED6D0429B1BC2E4F2CBF9DA1192_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 65409
+// Method Definition Index: 65388
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCalibrarInicioU3Ed__4_System_Collections_IEnumerator_get_Current_m112A0BAB13E6079A0C2D52785CA14C5A06E2446C (U3CCalibrarInicioU3Ed__4_tFAEB4FE83F1905A7562A2861AA9E18CEBD7367E4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -809,7 +833,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCalibrarInicioU3Ed__4_Syste
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 65410
+// Method Definition Index: 65389
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_Update_m47869207CCB80F2E4C5C687E277BD760EF22BE90 (MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -817,13 +841,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_Update_m47869207CCB80F
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Physics_t1244C2983AEAFA149425AFFC3DF53BC91C18ED56_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD068D01543BD6439ECEBA2F8356F454597A9E24F);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1D742238A258B52E2058000B26880F7D8F12EB22);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1E0DDC509B8F84D8AE8B7A73C688BBABDC6D03E0);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral21EB306CA2618926750F05B97B9BBDA299B7FF68);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2912713DE9C825979B7AF02EDC37A73FB83E7E0B);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral542F5976F8CAC84D51B8354363C1F822129311B6);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralC6EF643EA0FAE7DF95BAFBABD8A5C877F40C9F56);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD6F8353D40BB3043A5281C5BEC468EF0D97F09A0);
 		s_Il2CppMethodInitialized = true;
 	}
 	RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:16>
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:25>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
 		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_0);
@@ -837,7 +867,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_Update_m47869207CCB80F
 		Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 L_4;
 		memset((&L_4), 0, sizeof(L_4));
 		Ray__ctor_mE298992FD10A3894C38373198385F345C58BD64C_inline((&L_4), L_1, L_3, NULL);
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:20>
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:29>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5;
 		L_5 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_5);
@@ -855,105 +885,546 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_Update_m47869207CCB80F
 		L_11 = Color_get_red_mA2E53E7173FDC97E68E335049AB0FAAEE43A844D_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_DrawRay_mB172868181856F153732BB56C0BE1C58EE598F53(L_6, L_10, L_11, NULL);
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:23>
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:31>
 		float L_12 = __this->___distanciaRayo;
 		il2cpp_codegen_runtime_class_init_inline(Physics_t1244C2983AEAFA149425AFFC3DF53BC91C18ED56_il2cpp_TypeInfo_var);
 		bool L_13;
 		L_13 = Physics_Raycast_m839BA104A76B928A03F075C622923C6FCD2F8685(L_4, (&V_0), L_12, NULL);
 		if (!L_13)
 		{
-			goto IL_009d;
+			goto IL_0138;
 		}
 	}
 	{
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:26>
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:33>
 		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_14;
 		L_14 = RaycastHit_get_collider_m84B160439BBEAB6D9E94B799F720E25C9E2D444D((&V_0), NULL);
 		NullCheck(L_14);
 		bool L_15;
-		L_15 = Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5(L_14, _stringLiteralD068D01543BD6439ECEBA2F8356F454597A9E24F, NULL);
+		L_15 = Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5(L_14, _stringLiteralD6F8353D40BB3043A5281C5BEC468EF0D97F09A0, NULL);
 		if (!L_15)
+		{
+			goto IL_0077;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:35>
+		MiradaInteraccion_ProcesarMirada_m023398C72035A7F7B4F6F268EC705F8E7C52F1FC(__this, _stringLiteralD6F8353D40BB3043A5281C5BEC468EF0D97F09A0, NULL);
+		return;
+	}
+
+IL_0077:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:37>
+		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_16;
+		L_16 = RaycastHit_get_collider_m84B160439BBEAB6D9E94B799F720E25C9E2D444D((&V_0), NULL);
+		NullCheck(L_16);
+		bool L_17;
+		L_17 = Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5(L_16, _stringLiteral1D742238A258B52E2058000B26880F7D8F12EB22, NULL);
+		if (!L_17)
 		{
 			goto IL_0096;
 		}
 	}
 	{
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:28>
-		__this->___mirandoObjeto = (bool)1;
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:29>
-		float L_16 = __this->___cronometro;
-		float L_17;
-		L_17 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		__this->___cronometro = ((float)il2cpp_codegen_add(L_16, L_17));
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:32>
-		float L_18 = __this->___cronometro;
-		float L_19 = __this->___tiempoParaActivar;
-		if ((!(((float)L_18) >= ((float)L_19))))
-		{
-			goto IL_00a3;
-		}
-	}
-	{
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:34>
-		MiradaInteraccion_MostrarMensaje_m86C7C81A2C2B053E40FCE0F533C3D71562753811(__this, NULL);
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:39>
+		MiradaInteraccion_ProcesarMirada_m023398C72035A7F7B4F6F268EC705F8E7C52F1FC(__this, _stringLiteral1D742238A258B52E2058000B26880F7D8F12EB22, NULL);
 		return;
 	}
 
 IL_0096:
 	{
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:39>
-		MiradaInteraccion_ResetearMirada_mF6B3EE3A965A2626FED7CA5883DC6F11A87612B9(__this, NULL);
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:41>
+		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_18;
+		L_18 = RaycastHit_get_collider_m84B160439BBEAB6D9E94B799F720E25C9E2D444D((&V_0), NULL);
+		NullCheck(L_18);
+		bool L_19;
+		L_19 = Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5(L_18, _stringLiteral2912713DE9C825979B7AF02EDC37A73FB83E7E0B, NULL);
+		if (!L_19)
+		{
+			goto IL_00b5;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:43>
+		MiradaInteraccion_ProcesarMirada_m023398C72035A7F7B4F6F268EC705F8E7C52F1FC(__this, _stringLiteral2912713DE9C825979B7AF02EDC37A73FB83E7E0B, NULL);
 		return;
 	}
 
-IL_009d:
+IL_00b5:
 	{
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:44>
-		MiradaInteraccion_ResetearMirada_mF6B3EE3A965A2626FED7CA5883DC6F11A87612B9(__this, NULL);
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:45>
+		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_20;
+		L_20 = RaycastHit_get_collider_m84B160439BBEAB6D9E94B799F720E25C9E2D444D((&V_0), NULL);
+		NullCheck(L_20);
+		bool L_21;
+		L_21 = Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5(L_20, _stringLiteral542F5976F8CAC84D51B8354363C1F822129311B6, NULL);
+		if (!L_21)
+		{
+			goto IL_00d4;
+		}
 	}
-
-IL_00a3:
 	{
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:46>
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:47>
+		MiradaInteraccion_ProcesarMirada_m023398C72035A7F7B4F6F268EC705F8E7C52F1FC(__this, _stringLiteral542F5976F8CAC84D51B8354363C1F822129311B6, NULL);
 		return;
 	}
-}
-// Method Definition Index: 65411
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_ResetearMirada_mF6B3EE3A965A2626FED7CA5883DC6F11A87612B9 (MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354* __this, const RuntimeMethod* method) 
-{
+
+IL_00d4:
 	{
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:50>
-		__this->___mirandoObjeto = (bool)0;
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:49>
+		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_22;
+		L_22 = RaycastHit_get_collider_m84B160439BBEAB6D9E94B799F720E25C9E2D444D((&V_0), NULL);
+		NullCheck(L_22);
+		bool L_23;
+		L_23 = Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5(L_22, _stringLiteralC6EF643EA0FAE7DF95BAFBABD8A5C877F40C9F56, NULL);
+		if (!L_23)
+		{
+			goto IL_00f3;
+		}
+	}
+	{
 		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:51>
-		__this->___cronometro = (0.0f);
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:52>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___panelMensaje;
-		NullCheck(L_0);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_0, (bool)0, NULL);
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:53>
+		MiradaInteraccion_ProcesarMirada_m023398C72035A7F7B4F6F268EC705F8E7C52F1FC(__this, _stringLiteralC6EF643EA0FAE7DF95BAFBABD8A5C877F40C9F56, NULL);
 		return;
 	}
-}
-// Method Definition Index: 65412
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_MostrarMensaje_m86C7C81A2C2B053E40FCE0F533C3D71562753811 (MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354* __this, const RuntimeMethod* method) 
-{
+
+IL_00f3:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:53>
+		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_24;
+		L_24 = RaycastHit_get_collider_m84B160439BBEAB6D9E94B799F720E25C9E2D444D((&V_0), NULL);
+		NullCheck(L_24);
+		bool L_25;
+		L_25 = Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5(L_24, _stringLiteral21EB306CA2618926750F05B97B9BBDA299B7FF68, NULL);
+		if (!L_25)
+		{
+			goto IL_0112;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:55>
+		MiradaInteraccion_ProcesarMirada_m023398C72035A7F7B4F6F268EC705F8E7C52F1FC(__this, _stringLiteral21EB306CA2618926750F05B97B9BBDA299B7FF68, NULL);
+		return;
+	}
+
+IL_0112:
 	{
 		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:57>
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___panelMensaje;
-		NullCheck(L_0);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_0, (bool)1, NULL);
-		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:58>
+		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_26;
+		L_26 = RaycastHit_get_collider_m84B160439BBEAB6D9E94B799F720E25C9E2D444D((&V_0), NULL);
+		NullCheck(L_26);
+		bool L_27;
+		L_27 = Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5(L_26, _stringLiteral1E0DDC509B8F84D8AE8B7A73C688BBABDC6D03E0, NULL);
+		if (!L_27)
+		{
+			goto IL_0131;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:59>
+		MiradaInteraccion_ProcesarMirada_m023398C72035A7F7B4F6F268EC705F8E7C52F1FC(__this, _stringLiteral1E0DDC509B8F84D8AE8B7A73C688BBABDC6D03E0, NULL);
+		return;
+	}
+
+IL_0131:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:63>
+		MiradaInteraccion_ResetearMirada_mF6B3EE3A965A2626FED7CA5883DC6F11A87612B9(__this, NULL);
+		return;
+	}
+
+IL_0138:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:69>
+		MiradaInteraccion_ResetearMirada_mF6B3EE3A965A2626FED7CA5883DC6F11A87612B9(__this, NULL);
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:71>
 		return;
 	}
 }
-// Method Definition Index: 65413
+// Method Definition Index: 65390
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_ProcesarMirada_m023398C72035A7F7B4F6F268EC705F8E7C52F1FC (MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354* __this, String_t* ___0_tagObjeto, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:75>
+		String_t* L_0 = __this->___objetoActual;
+		String_t* L_1 = ___0_tagObjeto;
+		bool L_2;
+		L_2 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_0, L_1, NULL);
+		if (!L_2)
+		{
+			goto IL_0026;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:77>
+		__this->___cronometro = (0.0f);
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:78>
+		String_t* L_3 = ___0_tagObjeto;
+		__this->___objetoActual = L_3;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___objetoActual), (void*)L_3);
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:79>
+		MiradaInteraccion_OcultarTodosLosPaneles_m2F52E246AC170C35555D59071A7920FBB21954CD(__this, NULL);
+	}
+
+IL_0026:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:82>
+		float L_4 = __this->___cronometro;
+		float L_5;
+		L_5 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		__this->___cronometro = ((float)il2cpp_codegen_add(L_4, L_5));
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:84>
+		float L_6 = __this->___cronometro;
+		float L_7 = __this->___tiempoParaActivar;
+		if ((!(((float)L_6) >= ((float)L_7))))
+		{
+			goto IL_004d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:86>
+		String_t* L_8 = ___0_tagObjeto;
+		MiradaInteraccion_MostrarMensaje_m6E8E9848C1CD3069139FE30AD4F2685752120917(__this, L_8, NULL);
+	}
+
+IL_004d:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:88>
+		return;
+	}
+}
+// Method Definition Index: 65391
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_ResetearMirada_mF6B3EE3A965A2626FED7CA5883DC6F11A87612B9 (MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:92>
+		__this->___cronometro = (0.0f);
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:93>
+		__this->___objetoActual = _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___objetoActual), (void*)_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:94>
+		MiradaInteraccion_OcultarTodosLosPaneles_m2F52E246AC170C35555D59071A7920FBB21954CD(__this, NULL);
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:95>
+		return;
+	}
+}
+// Method Definition Index: 65392
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_OcultarTodosLosPaneles_m2F52E246AC170C35555D59071A7920FBB21954CD (MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:99>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___panelMensajeGrafica;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Implicit_m93896EF7D68FA113C42D3FE2BC6F661FC7EF514A(L_0, NULL);
+		if (!L_1)
+		{
+			goto IL_0019;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:99>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___panelMensajeGrafica;
+		NullCheck(L_2);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)0, NULL);
+	}
+
+IL_0019:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:100>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = __this->___panelMensajePlacaBase;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_4;
+		L_4 = Object_op_Implicit_m93896EF7D68FA113C42D3FE2BC6F661FC7EF514A(L_3, NULL);
+		if (!L_4)
+		{
+			goto IL_0032;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:100>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___panelMensajePlacaBase;
+		NullCheck(L_5);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_5, (bool)0, NULL);
+	}
+
+IL_0032:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:101>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = __this->___panelMensajeFuenteAlimentacion;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_7;
+		L_7 = Object_op_Implicit_m93896EF7D68FA113C42D3FE2BC6F661FC7EF514A(L_6, NULL);
+		if (!L_7)
+		{
+			goto IL_004b;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:101>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = __this->___panelMensajeFuenteAlimentacion;
+		NullCheck(L_8);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_8, (bool)0, NULL);
+	}
+
+IL_004b:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:102>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9 = __this->___panelMensajeVentilador;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_10;
+		L_10 = Object_op_Implicit_m93896EF7D68FA113C42D3FE2BC6F661FC7EF514A(L_9, NULL);
+		if (!L_10)
+		{
+			goto IL_0064;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:102>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11 = __this->___panelMensajeVentilador;
+		NullCheck(L_11);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_11, (bool)0, NULL);
+	}
+
+IL_0064:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:103>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_12 = __this->___panelMensajeRefrigeracionLiquida;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_13;
+		L_13 = Object_op_Implicit_m93896EF7D68FA113C42D3FE2BC6F661FC7EF514A(L_12, NULL);
+		if (!L_13)
+		{
+			goto IL_007d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:103>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->___panelMensajeRefrigeracionLiquida;
+		NullCheck(L_14);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_14, (bool)0, NULL);
+	}
+
+IL_007d:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:104>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_15 = __this->___panelMensajeOrdenador;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_16;
+		L_16 = Object_op_Implicit_m93896EF7D68FA113C42D3FE2BC6F661FC7EF514A(L_15, NULL);
+		if (!L_16)
+		{
+			goto IL_0096;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:104>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_17 = __this->___panelMensajeOrdenador;
+		NullCheck(L_17);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_17, (bool)0, NULL);
+	}
+
+IL_0096:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:105>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_18 = __this->___panelMensajeRam;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_19;
+		L_19 = Object_op_Implicit_m93896EF7D68FA113C42D3FE2BC6F661FC7EF514A(L_18, NULL);
+		if (!L_19)
+		{
+			goto IL_00af;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:105>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_20 = __this->___panelMensajeRam;
+		NullCheck(L_20);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_20, (bool)0, NULL);
+	}
+
+IL_00af:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:106>
+		return;
+	}
+}
+// Method Definition Index: 65393
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion_MostrarMensaje_m6E8E9848C1CD3069139FE30AD4F2685752120917 (MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354* __this, String_t* ___0_tag, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1D742238A258B52E2058000B26880F7D8F12EB22);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1E0DDC509B8F84D8AE8B7A73C688BBABDC6D03E0);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral21EB306CA2618926750F05B97B9BBDA299B7FF68);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2912713DE9C825979B7AF02EDC37A73FB83E7E0B);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral542F5976F8CAC84D51B8354363C1F822129311B6);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralC6EF643EA0FAE7DF95BAFBABD8A5C877F40C9F56);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD6F8353D40BB3043A5281C5BEC468EF0D97F09A0);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:110>
+		String_t* L_0 = ___0_tag;
+		bool L_1;
+		L_1 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_0, _stringLiteralD6F8353D40BB3043A5281C5BEC468EF0D97F09A0, NULL);
+		if (!L_1)
+		{
+			goto IL_0019;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:110>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___panelMensajeGrafica;
+		NullCheck(L_2);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)1, NULL);
+	}
+
+IL_0019:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:111>
+		String_t* L_3 = ___0_tag;
+		bool L_4;
+		L_4 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_3, _stringLiteral1D742238A258B52E2058000B26880F7D8F12EB22, NULL);
+		if (!L_4)
+		{
+			goto IL_0032;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:111>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = __this->___panelMensajePlacaBase;
+		NullCheck(L_5);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_5, (bool)1, NULL);
+	}
+
+IL_0032:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:112>
+		String_t* L_6 = ___0_tag;
+		bool L_7;
+		L_7 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_6, _stringLiteral2912713DE9C825979B7AF02EDC37A73FB83E7E0B, NULL);
+		if (!L_7)
+		{
+			goto IL_004b;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:112>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = __this->___panelMensajeFuenteAlimentacion;
+		NullCheck(L_8);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_8, (bool)1, NULL);
+	}
+
+IL_004b:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:113>
+		String_t* L_9 = ___0_tag;
+		bool L_10;
+		L_10 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_9, _stringLiteral542F5976F8CAC84D51B8354363C1F822129311B6, NULL);
+		if (!L_10)
+		{
+			goto IL_0064;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:113>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11 = __this->___panelMensajeVentilador;
+		NullCheck(L_11);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_11, (bool)1, NULL);
+	}
+
+IL_0064:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:114>
+		String_t* L_12 = ___0_tag;
+		bool L_13;
+		L_13 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_12, _stringLiteralC6EF643EA0FAE7DF95BAFBABD8A5C877F40C9F56, NULL);
+		if (!L_13)
+		{
+			goto IL_007d;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:114>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->___panelMensajeRefrigeracionLiquida;
+		NullCheck(L_14);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_14, (bool)1, NULL);
+	}
+
+IL_007d:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:115>
+		String_t* L_15 = ___0_tag;
+		bool L_16;
+		L_16 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_15, _stringLiteral21EB306CA2618926750F05B97B9BBDA299B7FF68, NULL);
+		if (!L_16)
+		{
+			goto IL_0096;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:115>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_17 = __this->___panelMensajeOrdenador;
+		NullCheck(L_17);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_17, (bool)1, NULL);
+	}
+
+IL_0096:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:116>
+		String_t* L_18 = ___0_tag;
+		bool L_19;
+		L_19 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_18, _stringLiteral1E0DDC509B8F84D8AE8B7A73C688BBABDC6D03E0, NULL);
+		if (!L_19)
+		{
+			goto IL_00af;
+		}
+	}
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:116>
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_20 = __this->___panelMensajeRam;
+		NullCheck(L_20);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_20, (bool)1, NULL);
+	}
+
+IL_00af:
+	{
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:117>
+		return;
+	}
+}
+// Method Definition Index: 65394
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion__ctor_m46E8B88302F62BA09F3899D709BE4B6AFF1EC1AA (MiradaInteraccion_tDD57D0338CC5955D5159A8D2CF836FB7761CB354* __this, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		s_Il2CppMethodInitialized = true;
+	}
 	{
 		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:6>
 		__this->___distanciaRayo = (10.0f);
 		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:7>
 		__this->___tiempoParaActivar = (2.0f);
+		//<source_info:C:/Users/Fran/ProyectoGiroscopio/Assets/Scripts/MiradaInteraccion.cs:20>
+		__this->___objetoActual = _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___objetoActual), (void*)_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
 	}
@@ -966,7 +1437,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MiradaInteraccion__ctor_m46E8B88302F62BA
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 65414
+// Method Definition Index: 65395
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6 (Readme_tE17B99201D0F52BD5727638AD3F41072A65B3BBB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -982,7 +1453,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Readme__ctor_m69C325C4C171DCB0312B646A90
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 65415
+// Method Definition Index: 65396
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B (Section_t50C894D0A717C2368EBAAE5477D4E8626D0B5401* __this, const RuntimeMethod* method) 
 {
 	{
@@ -998,7 +1469,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Section__ctor_m5F732533E4DFC0167D965E5F5
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 65416
+// Method Definition Index: 65397
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8F50E352855B96FFFC1D9CB07EACC90C99D73A3E UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1032,7 +1503,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t8F50E352855B96FFFC1D9CB07EACC
 		return L_6;
 	}
 }
-// Method Definition Index: 65417
+// Method Definition Index: 65398
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_tC95F24D0C6E6B77389433852BB389F39C692926E* __this, const RuntimeMethod* method) 
 {
 	{

@@ -872,31 +872,23 @@
             "icon": null
           },
           {
-            "name": "CapsuleCollider",
-            "scenes": [
-              "Assets/Scenes/SampleScene.unity"
-            ],
-            "dependencyType": 0,
-            "icon": null
-          },
-          {
             "name": "Collider",
             "scenes": [],
             "dependencyType": 1,
             "icon": null
           },
           {
-            "name": "PhysicsManager",
-            "scenes": [],
-            "dependencyType": 1,
-            "icon": null
-          },
-          {
-            "name": "SphereCollider",
+            "name": "MeshCollider",
             "scenes": [
               "Assets/Scenes/SampleScene.unity"
             ],
             "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "PhysicsManager",
+            "scenes": [],
+            "dependencyType": 1,
             "icon": null
           },
           {
