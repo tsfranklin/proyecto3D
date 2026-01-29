@@ -1,28 +1,50 @@
 using UnityEngine;
-using TMPro; // Si usas TextMeshPro
-using UnityEngine.UI; // Si usas Texto normal (Legacy)
+using TMPro;
 using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
     [Header("UI")]
-    public TextMeshProUGUI textoInstrucciones; // Cambia a 'Text' si usas Legacy
+    public TextMeshProUGUI textoInstrucciones; 
     
     [Header("Configuración")]
-    public MiradaInteraccion scriptMirada; // Referencia a tu script de mirar
-    public float tiempoLectura = 5.0f; // Tiempo que dejamos el panel abierto antes de pasar al siguiente
+    public MiradaInteraccion scriptMirada; 
+    public float tiempoLectura = 5.0f; 
 
-    // Lista de misiones: {TAG del objeto, Nombre para mostrar}
+    // Los datos iniciales
     private string[] ordenTags = { "Ordenador", "PlacaBase", "Ram", "Grafica", "FuenteAlimentacion", "RefrigeracionLiquida", "Ventilador" };
     private string[] nombresMostrar = { "el Ordenador Central", "la Placa Base", "la Memoria RAM", "la Tarjeta Gráfica", "la Fuente de Alimentación", "la Refrigeración Líquida", "los Ventiladores" };
 
     private int indiceActual = 0;
-    private bool esperandoLectura = false;
+    private bool esperandoLectura = false; 
 
     void Start()
     {
-        // Iniciamos el primer objetivo
+        //Barajamos antes de empezar el juego.
+        BarajarLista();
+
+        // 2. Empezamos el juego
         ActualizarInstruccion();
+    }
+
+    void BarajarLista()
+    {
+        // El ordenador tiene que ser el primero obligatoriamente para revelar las piezas.
+        for (int i = 1; i < ordenTags.Length; i++)
+        {
+            // Elegimos una posición al azar (entre el 1 y el final)
+            int aleatorio = Random.Range(1, ordenTags.Length);
+
+            // Intercambiamos los TAGS
+            string tempTag = ordenTags[i];
+            ordenTags[i] = ordenTags[aleatorio];
+            ordenTags[aleatorio] = tempTag;
+
+            // Intercambiamos los NOMBRES (para que coincidan con su tag)
+            string tempNombre = nombresMostrar[i];
+            nombresMostrar[i] = nombresMostrar[aleatorio];
+            nombresMostrar[aleatorio] = tempNombre;
+        }
     }
 
     void ActualizarInstruccion()
@@ -37,37 +59,37 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Esta función la llamará tu script de MiradaInteraccion
-    public bool ComprobarHallazgo(string tagMirado)
+    public bool EsElObjetoCorrecto(string tagMirado)
     {
-        // Si estamos esperando que el usuario lea, bloqueamos todo
-        if (esperandoLectura) return false;
+        if (indiceActual >= ordenTags.Length) return true;
 
-        // Si el juego ha terminado, no hacemos nada
-        if (indiceActual >= ordenTags.Length) return true; // Dejamos interactuar libremente al final
-
-        // Comprobamos si lo que mira es lo que toca
-        if (tagMirado == ordenTags[indiceActual])
+        if (esperandoLectura)
         {
-            StartCoroutine(SecuenciaAcierto());
-            return true; // Le decimos al otro script: "Sí, muestra el panel"
+            return tagMirado == ordenTags[indiceActual];
         }
 
-        return false; // "No, no muestres nada, no es lo que busco"
+        return tagMirado == ordenTags[indiceActual];
+    }
+
+    public void ConfirmarHallazgo()
+    {
+        if (esperandoLectura) return;
+
+        if (indiceActual < ordenTags.Length)
+        {
+            StartCoroutine(SecuenciaAcierto());
+        }
     }
 
     IEnumerator SecuenciaAcierto()
     {
         esperandoLectura = true;
-        textoInstrucciones.text = "¡Correcto!";
+        textoInstrucciones.text = "¡Correcto! Lee la información.";
         
-        // Esperamos X segundos para que el usuario lea el panel del componente
         yield return new WaitForSeconds(tiempoLectura);
 
-        // Cerramos los paneles (llamamos a tu script para que resetee)
-        scriptMirada.ForzarCierrePaneles(); // AÑADIREMOS ESTO A TU SCRIPT
+        scriptMirada.ForzarCierrePaneles(); 
         
-        // Pasamos al siguiente
         indiceActual++;
         esperandoLectura = false;
         ActualizarInstruccion();

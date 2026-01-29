@@ -5,12 +5,10 @@ public class MiradaInteraccion : MonoBehaviour
 {
     public float distanciaRayo = 10f;
     public float tiempoParaActivar = 1.5f;
-
-    // --- NUEVO: Referencia al GameManager ---
     public GameManager gameManager; 
-    // ----------------------------------------
 
-    [Header("Paneles de Texto (UI)")]
+    // TUS PANELES Y OBJETOS (Déjalos tal cual los tenías conectados en Unity)
+    [Header("Paneles")]
     public GameObject panelMensajeGrafica;
     public GameObject panelMensajePlacaBase;
     public GameObject panelMensajeFuenteAlimentacion;
@@ -18,7 +16,7 @@ public class MiradaInteraccion : MonoBehaviour
     public GameObject panelMensajeRefrigeracionLiquida;
     public GameObject panelMensajeRam;
 
-    [Header("Modelos 3D")]
+    [Header("Piezas 3D")]
     public GameObject Grafica;
     public GameObject PlacaBase;
     public GameObject FuenteAlimentacion;
@@ -33,13 +31,7 @@ public class MiradaInteraccion : MonoBehaviour
     void Start()
     {
         OcultarTodosLosPaneles();
-        // Apagar modelos al inicio
-        if(Grafica) Grafica.SetActive(false);
-        if(PlacaBase) PlacaBase.SetActive(false);
-        if(FuenteAlimentacion) FuenteAlimentacion.SetActive(false);
-        if(Ventilador) Ventilador.SetActive(false);
-        if(RefrigeracionLiquida) RefrigeracionLiquida.SetActive(false);
-        if(Ram) Ram.SetActive(false);
+        // Desactiva los modelos 3D aquí si no lo haces manualmente en el editor
     }
 
     void Update()
@@ -47,44 +39,42 @@ public class MiradaInteraccion : MonoBehaviour
         Ray rayo = new Ray(transform.position, transform.forward);
         RaycastHit golpe;
 
-        Debug.DrawRay(transform.position, transform.forward * distanciaRayo, Color.red);
-
         if (Physics.Raycast(rayo, out golpe, distanciaRayo))
         {
-            string tagGolpe = golpe.collider.tag;
+            string tag = golpe.collider.tag;
 
-            // --- NUEVO: FILTRO DEL JUEGO ---
-            // Si el GameManager existe y NO es el objeto correcto, ignoramos
-            if (gameManager != null)
+            // 1. PRIMERO: Si es el ordenador y no está revelado, prioridad absoluta
+            if (tag == "Ordenador")
             {
-                // Solo permitimos procesar si el GameManager dice que es el correcto
-                // PERO: Si es el "Ordenador" (para revelar piezas), dejamos que pase siempre si no se ha revelado
-                if (tagGolpe != "Ordenador" && !gameManager.ComprobarHallazgo(tagGolpe))
-                {
-                   ResetearMirada();
-                   return; 
-                }
-            }
-            // -------------------------------
-
-            if (tagGolpe == "Grafica" || tagGolpe == "PlacaBase" || tagGolpe == "FuenteAlimentacion" || 
-                tagGolpe == "Ventilador" || tagGolpe == "RefrigeracionLiquida" || tagGolpe == "Ram")
-            {
-                ProcesarMirada(tagGolpe);
-            }
-            else if (tagGolpe == "Ordenador")
-            {
-                // Lógica del ordenador (primera fase)
                  if (!componentesYaRevelados)
                  {
                     cronometro += Time.deltaTime;
                     if (cronometro >= tiempoParaActivar)
                     {
                         RevelarComponentes();
-                        // Avisamos al juego que hemos empezado
-                        if(gameManager != null) gameManager.ComprobarHallazgo("Ordenador");
+                        // Avisamos al manager que hemos encontrado el ordenador
+                        if(gameManager) gameManager.ConfirmarHallazgo(); 
                     }
                  }
+                 return; // Salimos para no mezclar lógicas
+            }
+
+            // 2. SEGUNDO: Filtro del Juego (¿Es lo que busco?)
+            if (gameManager != null)
+            {
+                // Solo procesamos si es el objeto correcto
+                if (!gameManager.EsElObjetoCorrecto(tag))
+                {
+                   ResetearMirada();
+                   return; 
+                }
+            }
+
+            // 3. TERCERO: Lógica normal de abrir paneles
+            if (tag == "Grafica" || tag == "PlacaBase" || tag == "FuenteAlimentacion" || 
+                tag == "Ventilador" || tag == "RefrigeracionLiquida" || tag == "Ram")
+            {
+                ProcesarMirada(tag);
             }
             else
             {
@@ -108,11 +98,14 @@ public class MiradaInteraccion : MonoBehaviour
 
         cronometro += Time.deltaTime;
 
+        // ¡AQUÍ ESTÁ LA CLAVE!
         if (cronometro >= tiempoParaActivar)
         {
+            // 1. Mostramos el panel
             MostrarMensaje(tagObjeto);
-            // Avisamos al Manager que ya hemos completado la visualización
-            if(gameManager != null) gameManager.ComprobarHallazgo(tagObjeto);
+            
+            // 2. Y AHORA avisamos al manager de que hemos ganado
+            if(gameManager != null) gameManager.ConfirmarHallazgo();
         }
     }
 
@@ -123,14 +116,12 @@ public class MiradaInteraccion : MonoBehaviour
         OcultarTodosLosPaneles();
     }
 
-    // --- NUEVO: Función pública para que el GameManager cierre todo ---
     public void ForzarCierrePaneles()
     {
         OcultarTodosLosPaneles();
         cronometro = 0f;
         objetoActual = "";
     }
-    // ----------------------------------------------------------------
 
     void OcultarTodosLosPaneles()
     {
