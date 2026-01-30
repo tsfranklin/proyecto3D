@@ -4,65 +4,82 @@ using UnityEngine.UI;
 public class MiradaInteraccion : MonoBehaviour
 {
     public float distanciaRayo = 10f;
-    public float tiempoParaActivar = 2.0f;
+    public float tiempoParaActivar = 1.5f;
+    public GameManager gameManager; 
 
-    // Solo los 4 paneles básicos
+    // TUS PANELES Y OBJETOS (Déjalos tal cual los tenías conectados en Unity)
+    [Header("Paneles")]
     public GameObject panelMensajeGrafica;
     public GameObject panelMensajePlacaBase;
     public GameObject panelMensajeFuenteAlimentacion;
     public GameObject panelMensajeVentilador;
     public GameObject panelMensajeRefrigeracionLiquida;
-    public GameObject panelMensajeOrdenador;
     public GameObject panelMensajeRam;
 
+    [Header("Piezas 3D")]
+    public GameObject Grafica;
+    public GameObject PlacaBase;
+    public GameObject FuenteAlimentacion;
+    public GameObject Ventilador;
+    public GameObject RefrigeracionLiquida;
+    public GameObject Ram;
 
     private float cronometro = 0f;
     private string objetoActual = ""; 
+    private bool componentesYaRevelados = false; 
+
+    void Start()
+    {
+        OcultarTodosLosPaneles();
+        // Desactiva los modelos 3D aquí si no lo haces manualmente en el editor
+    }
 
     void Update()
     {
-        // Lanzamos el rayo
         Ray rayo = new Ray(transform.position, transform.forward);
         RaycastHit golpe;
 
-        // Dibujo para debug (solo se ve en Scene)
-        Debug.DrawRay(transform.position, transform.forward * distanciaRayo, Color.red);
-
         if (Physics.Raycast(rayo, out golpe, distanciaRayo))
         {
-            if (golpe.collider.CompareTag("Grafica"))
+            string tag = golpe.collider.tag;
+
+            // 1. PRIMERO: Si es el ordenador y no está revelado, prioridad absoluta
+            if (tag == "Ordenador")
             {
-                ProcesarMirada("Grafica");
+                 if (!componentesYaRevelados)
+                 {
+                    cronometro += Time.deltaTime;
+                    if (cronometro >= tiempoParaActivar)
+                    {
+                        RevelarComponentes();
+                        // Avisamos al manager que hemos encontrado el ordenador
+                        if(gameManager) gameManager.ConfirmarHallazgo(); 
+                    }
+                 }
+                 return; // Salimos para no mezclar lógicas
             }
-            else if (golpe.collider.CompareTag("PlacaBase"))
+
+            // 2. SEGUNDO: Filtro del Juego (¿Es lo que busco?)
+            if (gameManager != null)
             {
-                ProcesarMirada("PlacaBase");
+                // Solo procesamos si es el objeto correcto
+                if (!gameManager.EsElObjetoCorrecto(tag))
+                {
+                   ResetearMirada();
+                   return; 
+                }
             }
-            else if (golpe.collider.CompareTag("FuenteAlimentacion"))
+
+            // 3. TERCERO: Lógica normal de abrir paneles
+            if (tag == "Grafica" || tag == "PlacaBase" || tag == "FuenteAlimentacion" || 
+                tag == "Ventilador" || tag == "RefrigeracionLiquida" || tag == "Ram")
             {
-                ProcesarMirada("FuenteAlimentacion");
-            }
-            else if (golpe.collider.CompareTag("Ventilador"))
-            {
-                ProcesarMirada("Ventilador");
-            }
-            else if (golpe.collider.CompareTag("RefrigeracionLiquida"))
-            {
-                ProcesarMirada("RefrigeracionLiquida");
-            }
-            else if (golpe.collider.CompareTag("Ordenador"))
-            {
-                ProcesarMirada("Ordenador");
-            }
-            else if (golpe.collider.CompareTag("Ram"))
-            {
-                ProcesarMirada("Ram");
+                ProcesarMirada(tag);
             }
             else
             {
                 ResetearMirada();
             }
-            
         }
         else
         {
@@ -81,9 +98,14 @@ public class MiradaInteraccion : MonoBehaviour
 
         cronometro += Time.deltaTime;
 
+        // ¡AQUÍ ESTÁ LA CLAVE!
         if (cronometro >= tiempoParaActivar)
         {
+            // 1. Mostramos el panel
             MostrarMensaje(tagObjeto);
+            
+            // 2. Y AHORA avisamos al manager de que hemos ganado
+            if(gameManager != null) gameManager.ConfirmarHallazgo();
         }
     }
 
@@ -94,6 +116,13 @@ public class MiradaInteraccion : MonoBehaviour
         OcultarTodosLosPaneles();
     }
 
+    public void ForzarCierrePaneles()
+    {
+        OcultarTodosLosPaneles();
+        cronometro = 0f;
+        objetoActual = "";
+    }
+
     void OcultarTodosLosPaneles()
     {
         if(panelMensajeGrafica) panelMensajeGrafica.SetActive(false);
@@ -101,7 +130,6 @@ public class MiradaInteraccion : MonoBehaviour
         if(panelMensajeFuenteAlimentacion) panelMensajeFuenteAlimentacion.SetActive(false);
         if(panelMensajeVentilador) panelMensajeVentilador.SetActive(false);
         if(panelMensajeRefrigeracionLiquida) panelMensajeRefrigeracionLiquida.SetActive(false);
-        if(panelMensajeOrdenador) panelMensajeOrdenador.SetActive(false);
         if(panelMensajeRam) panelMensajeRam.SetActive(false);
     }
 
@@ -112,7 +140,18 @@ public class MiradaInteraccion : MonoBehaviour
         if (tag == "FuenteAlimentacion") panelMensajeFuenteAlimentacion.SetActive(true);
         if (tag == "Ventilador") panelMensajeVentilador.SetActive(true);
         if (tag == "RefrigeracionLiquida") panelMensajeRefrigeracionLiquida.SetActive(true);
-        if (tag == "Ordenador") panelMensajeOrdenador.SetActive(true);
         if (tag == "Ram") panelMensajeRam.SetActive(true);
+    }
+
+    void RevelarComponentes()
+    {
+        if(Grafica) Grafica.SetActive(true);
+        if(PlacaBase) PlacaBase.SetActive(true);
+        if(FuenteAlimentacion) FuenteAlimentacion.SetActive(true);
+        if(Ventilador) Ventilador.SetActive(true);
+        if(RefrigeracionLiquida) RefrigeracionLiquida.SetActive(true);
+        if(Ram) Ram.SetActive(true);
+        
+        componentesYaRevelados = true;
     }
 }
