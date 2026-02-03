@@ -7,7 +7,6 @@ public class MiradaInteraccion : MonoBehaviour
     public float tiempoParaActivar = 1.5f;
     public GameManager gameManager; 
 
-    // TUS PANELES Y OBJETOS (Déjalos tal cual los tenías conectados en Unity)
     [Header("Paneles")]
     public GameObject panelMensajeGrafica;
     public GameObject panelMensajePlacaBase;
@@ -31,7 +30,6 @@ public class MiradaInteraccion : MonoBehaviour
     void Start()
     {
         OcultarTodosLosPaneles();
-        // Desactiva los modelos 3D aquí si no lo haces manualmente en el editor
     }
 
     void Update()
@@ -43,7 +41,7 @@ public class MiradaInteraccion : MonoBehaviour
         {
             string tag = golpe.collider.tag;
 
-            // 1. PRIMERO: Si es el ordenador y no está revelado, prioridad absoluta
+            // 1. Si es el ordenador y no está revelado, prioridad a este.
             if (tag == "Ordenador")
             {
                  if (!componentesYaRevelados)
@@ -52,14 +50,13 @@ public class MiradaInteraccion : MonoBehaviour
                     if (cronometro >= tiempoParaActivar)
                     {
                         RevelarComponentes();
-                        // Avisamos al manager que hemos encontrado el ordenador
                         if(gameManager) gameManager.ConfirmarHallazgo(); 
                     }
                  }
-                 return; // Salimos para no mezclar lógicas
+                 return;
             }
 
-            // 2. SEGUNDO: Filtro del Juego (¿Es lo que busco?)
+            // 2. Filtro del Juego
             if (gameManager != null)
             {
                 // Solo procesamos si es el objeto correcto
@@ -70,7 +67,7 @@ public class MiradaInteraccion : MonoBehaviour
                 }
             }
 
-            // 3. TERCERO: Lógica normal de abrir paneles
+            // 3. Lógica normal de abrir paneles
             if (tag == "Grafica" || tag == "PlacaBase" || tag == "FuenteAlimentacion" || 
                 tag == "Ventilador" || tag == "RefrigeracionLiquida" || tag == "Ram")
             {
@@ -98,7 +95,6 @@ public class MiradaInteraccion : MonoBehaviour
 
         cronometro += Time.deltaTime;
 
-        // ¡AQUÍ ESTÁ LA CLAVE!
         if (cronometro >= tiempoParaActivar)
         {
             // 1. Mostramos el panel
