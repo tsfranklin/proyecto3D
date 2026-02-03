@@ -6,20 +6,19 @@ public class ControlCamara : MonoBehaviour
     private GameObject camParent;
     public float velocidadSuavizado = 5.0f;
     
-    // Variable para corregir si mira muy arriba o abajo manualmente (en grados)
-    // Si sigue mirando abajo, prueba a poner aquí -10 o -20. Si mira arriba, pon 10 o 20.
+    // Variable para corregir si mira muy arriba o abajo manualmente
     public float correccionVertical = 0f; 
 
     void Start()
     {
-        // Crear el padre para ro tarlo y corregir la dirección
+        // Crear el padre para rotarlo y corregir la dirección
         camParent = new GameObject("PadreCamara");
         camParent.transform.position = this.transform.position;
         this.transform.parent = camParent.transform;
 
         Input.gyro.enabled = true;
 
-        // Iniciamos la calibración (esperamos un poco a que el giroscopio se despierte)
+        // Iniciamos la calibración
         StartCoroutine(CalibrarInicio());
     }
 
@@ -33,7 +32,7 @@ public class ControlCamara : MonoBehaviour
         // 2. Leemos hacia dónde está mirando la cámara ahora mismo (solo en horizontal, eje Y)
         float rotacionActualY = transform.localEulerAngles.y;
 
-        // 3. Giramos al PADRE en sentido contrario para que la cámara quede mirando al frente (Z = 0)
+        // 3. Giramos al padre en sentido contrario para que la cámara quede mirando al frente (Z = 0)
         camParent.transform.rotation = Quaternion.Euler(0, -rotacionActualY, 0);
     }
 

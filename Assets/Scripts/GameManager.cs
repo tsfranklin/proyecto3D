@@ -35,12 +35,12 @@ public class GameManager : MonoBehaviour
             // Elegimos una posición al azar (entre el 1 y el final)
             int aleatorio = Random.Range(1, ordenTags.Length);
 
-            // Intercambiamos los TAGS
+            // Intercambiamos los tags
             string tempTag = ordenTags[i];
             ordenTags[i] = ordenTags[aleatorio];
             ordenTags[aleatorio] = tempTag;
 
-            // Intercambiamos los NOMBRES (para que coincidan con su tag)
+            // Intercambiamos los nombres para que coincidan con su tag
             string tempNombre = nombresMostrar[i];
             nombresMostrar[i] = nombresMostrar[aleatorio];
             nombresMostrar[aleatorio] = tempNombre;
